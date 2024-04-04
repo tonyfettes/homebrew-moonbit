@@ -37,7 +37,7 @@ class Moonbit < Formula
 
   def install
     resource("moon").stage do
-      system "chmod", "+x", "moon"
+      chmod 0555, "moon"
       libexec.install "moon"
     end
     (bin/"moon").write <<~EOS
@@ -68,8 +68,6 @@ class Moonbit < Formula
 
   def post_install
     cd pkgshare/"lib/core" do
-      system "echo", "pkgshare=#{pkgshare}"
-      system "env"
       system libexec/"moon", "bundle"
     end
   end
