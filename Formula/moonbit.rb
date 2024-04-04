@@ -4,7 +4,7 @@ class Moonbit < Formula
   url "https://cli.moonbitlang.com/core.zip"
   version "20240403"
   sha256 "ba5bb61c4853bba2e07a80435e4052b5f0f193c531ee6042936e225027a94702"
-  license "Apache-2.0 or"
+  license "Apache-2.0"
 
   on_macos do
     on_arm do
@@ -37,9 +37,17 @@ class Moonbit < Formula
 
   def install
     resource("moon").stage do
+      system "chmod", "+x", "moon"
       libexec.install "moon"
     end
-    bin.env_script_all_files(libexec, MOON_HOME: pkgshare)
+    (bin/"moon").write <<~EOS
+      #!/usr/bin/env sh
+
+      MOON_HOME="${MOON_HOME:-#{pkgshare}}"
+      export MOON_HOME
+
+      #{libexec}/moon "$@"
+    EOS
     resource("moonc").stage do
       bin.install "moonc"
     end
@@ -58,8 +66,20 @@ class Moonbit < Formula
     (pkgshare/"lib/core").install Dir["*"]
   end
 
+  def post_install
+    cd pkgshare/"lib/core" do
+      system "echo", "pkgshare=#{pkgshare}"
+      system "env"
+      system libexec/"moon", "bundle"
+    end
+  end
+
   test do
     system "#{bin}/moon", "version"
-    system "#{bin}/moonc", "-v"
+    system "#{bin}/moon", "new", "hello"
+    cd "hello" do
+      system "#{bin}/moon", "build"
+      system "#{bin}/moon", "run"
+    end
   end
 end
