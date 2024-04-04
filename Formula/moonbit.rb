@@ -3,6 +3,7 @@ class Moonbit < Formula
   homepage "https://www.moonbitlang.com/"
   url "https://cli.moonbitlang.com/core.zip"
   version "20240403"
+  sha256 "ba5bb61c4853bba2e07a80435e4052b5f0f193c531ee6042936e225027a94702"
   license "Apache-2.0 or"
 
   on_macos do
@@ -54,7 +55,7 @@ class Moonbit < Formula
     resource("mooninfo").stage do
       bin.install "mooninfo"
     end
-    (pkgshare/"lib").install "core.zip"
+    (pkgshare/"lib/core").install Dir["*"]
   end
 
   test do
