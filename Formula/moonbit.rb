@@ -6,8 +6,6 @@ class Moonbit < Formula
   sha256 "ba5bb61c4853bba2e07a80435e4052b5f0f193c531ee6042936e225027a94702"
   license "Apache-2.0"
 
-  depends_on arch: [:x86_64, :arm]
-
   on_macos do
     on_arm do
       resource "moon" do
@@ -110,7 +108,7 @@ class Moonbit < Formula
 
   def post_install
     cd pkgshare/"lib/core" do
-      system libexec/"moon", "bundle"
+      system "moon", "bundle"
     end
   end
 
