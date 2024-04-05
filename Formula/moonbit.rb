@@ -108,7 +108,7 @@ class Moonbit < Formula
 
   def post_install
     cd pkgshare/"lib/core" do
-      system libexec/"moon", "bundle"
+      system "moon", "bundle"
     end
   end
 
