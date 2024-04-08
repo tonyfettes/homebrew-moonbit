@@ -6,6 +6,12 @@ class Moonbit < Formula
   sha256 "4d59eb0875472d3d5d3817090a85b09c270c74d414e67ffcef5e0b3c59f10e1f"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/tonyfettes/homebrew-moonbit/releases/download/moonbit-20240408"
+    sha256 cellar: :any_skip_relocation, ventura:      "4045cd22e8c9fa310e994873a6f1bbdd6a0e8043644d90699c3974c0ff6f4bf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bffa3c5f4a77c96357ba8f6912954a0b3b4b2ffe255dfc76be73e85cee7f1a95"
+  end
+
   on_macos do
     on_arm do
       resource "moon" do
