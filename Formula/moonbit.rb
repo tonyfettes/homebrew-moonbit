@@ -13,12 +13,6 @@ class Moonbit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "02833c3d9144112c2258e2ef35e8fc72413f32fea026a05445a190ace186eaf2"
   end
 
-  resource "index" do
-    url "https://mooncakes.io/git/index",
-      using: :git,
-      branch: "main"
-  end
-
   on_macos do
     on_arm do
       resource "moon" do
@@ -113,6 +107,12 @@ class Moonbit < Formula
         sha256 "b3253676dde5e43c572203702c303de935d586d0e150c7c1cd97435f12577d30"
       end
     end
+  end
+
+  resource "index" do
+    url "https://mooncakes.io/git/index",
+      using:  :git,
+      branch: "main"
   end
 
   def install
