@@ -143,10 +143,10 @@ class Moonbit < Formula
     resource("moonrun").stage do
       bin.install "moonrun"
     end
-    (pkgshare/"lib/core").install Dir["*"]
     resource("index").stage do
-      (pkgshare/"registry/index").install Dir["*"]
+      (pkgshare/"registry/index/user").install Dir["*"]
     end
+    (pkgshare/"lib/core").install Dir["*"]
   end
 
   def post_install
