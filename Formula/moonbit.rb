@@ -13,6 +13,12 @@ class Moonbit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "02833c3d9144112c2258e2ef35e8fc72413f32fea026a05445a190ace186eaf2"
   end
 
+  resource "index" do
+    url "https://mooncakes.io/git/index",
+      using: :git,
+      branch: "main"
+  end
+
   on_macos do
     on_arm do
       resource "moon" do
@@ -122,6 +128,9 @@ class Moonbit < Formula
 
       #{libexec}/moon "$@"
     EOS
+    resource("moon_cove_report").stage do
+      bin.install "moon_cove_report"
+    end
     resource("moonc").stage do
       bin.install "moonc"
     end
@@ -135,11 +144,14 @@ class Moonbit < Formula
       bin.install "moonrun"
     end
     (pkgshare/"lib/core").install Dir["*"]
+    resource("index").stage do
+      (pkgshare/"registry").install Dir["*"]
+    end
   end
 
   def post_install
     cd pkgshare/"lib/core" do
-      system "moon", "bundle"
+      system "moon", "bundle", "--all"
     end
   end
 
