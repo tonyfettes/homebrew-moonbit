@@ -2,8 +2,8 @@ class Moonbit < Formula
   desc "Intelligent developer platform for Cloud and Edge using WASM"
   homepage "https://www.moonbitlang.com/"
   url "https://cli.moonbitlang.com/core.zip"
-  version "20240422"
-  sha256 "914a6551ab4a54e1d1ee42a5fc0d407b66e338148033304f47a729f68cc01ed3"
+  version "20240430"
+  sha256 "31bf19d197bf4eccce8992956f35ae2cd1e036b21143d65ca3762d65b2ba134f"
   license "Apache-2.0"
 
   bottle do
@@ -23,61 +23,61 @@ class Moonbit < Formula
     on_arm do
       resource "moon" do
         url "https://cli.moonbitlang.com/macos_m1/moon"
-        sha256 "5dd728c35a1d6222374324e066cdb444b42e649924b68bae3f4106e33e065efc"
+        sha256 "27f4c86e6d17e553930244c5056e0a9fb1c97147f3fa37c6a08c8864d9a531f8"
       end
       resource "moon_cove_report" do
         url "https://cli.moonbitlang.com/macos_m1/moon_cove_report"
-        sha256 "945522a509e4755d2cd3ceb7a6eaa7b193089c749415388491a41a9e8751d4ee"
+        sha256 "adcd25b7c076bdfd4670226e378aece8f9a880875f2e63688a8131395bae8560"
       end
       resource "moonc" do
         url "https://cli.moonbitlang.com/macos_m1/moonc"
-        sha256 "91bcaaf0b4383e712abd0b76b96707f324b8a7a3f0780f32bc1281be623b30fc"
+        sha256 "d2abf94cfcf987e91d32e3f47e23c638d963f975bbcfaf75d5b6fc3038b4dc77"
       end
       resource "moondoc" do
         url "https://cli.moonbitlang.com/macos_m1/moondoc"
-        sha256 "a6d03393ce6b1512a2ec5df4feb2ac8874a79ae93416be2119e59fde47b9a413"
+        sha256 "0135c2fd5b71bf7f35fd33a6d14784ef7c0207e604fc4093e5a6d72777c863ed"
       end
       resource "moonfmt" do
         url "https://cli.moonbitlang.com/macos_m1/moonfmt"
-        sha256 "0621baf2da49e1376411faf17a431a0cf6aeb13c3348395e788441f7adc5de86"
+        sha256 "432e26a64980b7d3442909c0b31e52160bb68444ab7ac3dcb1b6f9d32f075dd7"
       end
       resource "mooninfo" do
         url "https://cli.moonbitlang.com/macos_m1/mooninfo"
-        sha256 "1d3b70043c874fb831f734342c9e810b262c59508f547af86db57e1c2e17f96b"
+        sha256 "783519b1eb2da6005849141790112942ecf9139673487c97bf02d0f29905eaf1"
       end
       resource "moonrun" do
         url "https://cli.moonbitlang.com/macos_m1/moonrun"
-        sha256 "d66b306077164c5c73e889dbf40e6c57c47a803e8d03f2d5c6cdc27d7cf910a9"
+        sha256 "9fc9a7596e2e81a35f8ea0cbcd286f03be1fdb8de883a5dd9fb8fc63d9fb11f6"
       end
     end
     on_intel do
       resource "moon" do
         url "https://cli.moonbitlang.com/macos_intel/moon"
-        sha256 "98cdeb15409ab70e667ecade8e1cc966e5250074d71079de85c69534e5b3a081"
+        sha256 "c7443d908e6751189a9469bcd5bcb524257f90183cb3409836ec47874e92c2ea"
       end
       resource "moon_cove_report" do
         url "https://cli.moonbitlang.com/macos_intel/moon_cove_report"
-        sha256 "90ed148464d3cd55461490fe8fca765561a2e0c534bd0caad4211dc5145fa4c7"
+        sha256 "11c9e579652454038532ad5aa46322675cd98cde0d782567ab088138ea6d2ebc"
       end
       resource "moonc" do
         url "https://cli.moonbitlang.com/macos_intel/moonc"
-        sha256 "c0bcb6fb12cf785e82674e7e9f0205995cb593a043ad8142eee775fdaaf04e02"
+        sha256 "28268776cad914d5da27a149959822d54bbf88d62014ea42560713a66e492fad"
       end
       resource "moondoc" do
         url "https://cli.moonbitlang.com/macos_intel/moondoc"
-        sha256 "f7d3e5c159f984f26f72c41dd7dfa191b539220b22c8d2e2ee5cfb17e91e3872"
+        sha256 "b9fcac32c656dbc0189f01c47055cbafaf23ff7b9843402710af17291ce38310"
       end
       resource "moonfmt" do
         url "https://cli.moonbitlang.com/macos_intel/moonfmt"
-        sha256 "fc5c9c36ef217db84e43b46f01cdaee83c8e0103918f222b227a18a89aa41c0f"
+        sha256 "e24ad2ab6aa2a5119436ec51b86126781c29e95e8576b1094834630228e0f31d"
       end
       resource "mooninfo" do
         url "https://cli.moonbitlang.com/macos_intel/mooninfo"
-        sha256 "d18a3d5c5c18f745c95889becefed4872cbed0e8d273c42a58eaa0a2a477b5fb"
+        sha256 "9a54d1adbc7c5a73ddf053a551cffa0e6e3284df657120da4f0431fd69dd2b02"
       end
       resource "moonrun" do
         url "https://cli.moonbitlang.com/macos_intel/moonrun"
-        sha256 "46a832f8a11bf9279f3e0a314ca5709f31986a50029bb9992d0797354defeda2"
+        sha256 "6252140313c460cde4bc680b82bcbd384c3775980e8a2d1b529cdbf40e6b2a80"
       end
     end
   end
@@ -86,31 +86,31 @@ class Moonbit < Formula
     on_intel do
       resource "moon" do
         url "https://cli.moonbitlang.com/ubuntu_x86/moon"
-        sha256 "d5afcf0fb0c16d433772eeac0501ea05fc17f53e870abecf50c69bdfdd52a25a"
+        sha256 "3652798d2a9107c6c2053bda2554f80c694fc0066673dfe3a31d7281f64e6ec8"
       end
       resource "moon_cove_report" do
         url "https://cli.moonbitlang.com/ubuntu_x86/moon_cove_report"
-        sha256 "63e33ef2fa2e0ad0f80e0c808c8371328c63b11b4885e0e6cca43b36af9b5308"
+        sha256 "23a86373573deb8b4f7e4b611aa696414944897f0817f14462753f78af25203f"
       end
       resource "moonc" do
         url "https://cli.moonbitlang.com/ubuntu_x86/moonc"
-        sha256 "b026302aecfa7e81445723efcdfa83f7f3925940dd5b52bfd9db0cf828c3bcd3"
+        sha256 "4f99e0e0a1acb58ef3cc0a9022387b2b0cc86e201a8aaaa60cc4434d7e7163a9"
       end
       resource "moondoc" do
         url "https://cli.moonbitlang.com/ubuntu_x86/moondoc"
-        sha256 "6ab59adf5bac911c169f5d7f3685b1be654d82b149cb4a4b138ad28fcdf0df71"
+        sha256 "cbc48773b6373099d98d3abd9a975acca1425d928c153d9e6a9258751b711bfc"
       end
       resource "moonfmt" do
         url "https://cli.moonbitlang.com/ubuntu_x86/moonfmt"
-        sha256 "2ea89467ceac0d88e42d63aed9b862e8d114017ccd02aea26a5aeaf08fe4c15c"
+        sha256 "f851b7c40ee020c5313e1e7230817ab3e84d57700e90e484b3da3776d438b618"
       end
       resource "mooninfo" do
         url "https://cli.moonbitlang.com/ubuntu_x86/mooninfo"
-        sha256 "80db5f80559bba2498424787c9e46b70ebbd6ee572b040e44e77f20226eda6ef"
+        sha256 "9d62dd9af9330178ccc8f5d0bbb0cb0ba9bf995e158ba5e29ba0f30649a97f2e"
       end
       resource "moonrun" do
         url "https://cli.moonbitlang.com/ubuntu_x86/moonrun"
-        sha256 "53842027da2c14f2bcceaa803fd0a276043e147ab2052bff8bbce6ee6955c50f"
+        sha256 "b3253676dde5e43c572203702c303de935d586d0e150c7c1cd97435f12577d30"
       end
     end
   end
@@ -145,7 +145,7 @@ class Moonbit < Formula
     end
     (pkgshare/"lib/core").install Dir["*"]
     resource("index").stage do
-      (pkgshare/"registry").install Dir["*"]
+      (pkgshare/"registry/index").install Dir["*"]
     end
   end
 
