@@ -100,14 +100,15 @@ def generate_cask(file: Path):
             sha256[k] = hashlib.file_digest(f, "sha256").hexdigest()
     for k, v in sha256.items():
         logger.info(f"sha256 for {k} is {v}")
-    subprocess.run(["chmod", "+x", "bin/arm/moon"], check=True)
-    proc = subprocess.run(["bin/arm/moon", "version"], check=True, stdout=subprocess.PIPE)
-    version_stdout = proc.stdout.decode("utf-8")
-    logger.info("version: %s", version_stdout)
-    version_match = re.match(r'moon (?P<version>(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?) .*', version_stdout)
-    if version_match is None:
-        raise ValueError("failed to get version")
-    version = version_match.group('version')
+    with requests.get('https://cli.moonbitlang.com/version.json') as r:
+        r.raise_for_status()
+        version_string = r.json()["items"][0]["version"]
+        logger.info(f"version: {version_string}")
+        version_match = re.match(r'(?P<version>(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?) .*', version_string)
+        if version_match is None:
+            raise ValueError("failed to get version")
+        version = version_match.group('version')
+        logger.info(f"version: {version}")
     file.write_text(
         f"""cask "moonbit" do
   arch arm:   "{arch["arm"]}",
