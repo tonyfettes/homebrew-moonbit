@@ -4,7 +4,7 @@ cask "moonbit" do
 
   version "0.1.20240924"
   sha256 arm:   "29caf8302a2a95f52f872c18ff6d3e9a19bf0a46ed77a4af478edf060884cbcc",
-         intel: "bc382e31faf656d843cdd3210395b06e41d854f35e93d053aca1f7a480794475"
+         intel: "d019d80396eab0f11dbb2706a691d0c74631403268e7269b4507d15fa704a530"
 
   url "https://cli.moonbitlang.com/#{arch}/moon"
   name "MoonBit"
