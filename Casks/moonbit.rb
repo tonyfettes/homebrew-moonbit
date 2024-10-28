@@ -2,9 +2,9 @@ cask "moonbit" do
   arch arm:   "macos_m1",
        intel: "macos_intel"
 
-  version "0.1.20241021"
-  sha256 arm:   "12e316750f03b56f6278dc71abc034cebd03322d0776469156101c6014710fb5",
-         intel: "7e8341c08f3ee37d52cc1c9ac34ec97fb821a9cf4dd06a97d10cea8d5dc7aa05"
+  version "0.1.20241028"
+  sha256 arm:   "c3c4621c9f36d098440511be9043dfe36681367a23e6425839133f53f5737cd9",
+         intel: "d2bd50dda2309b5727e2a15e633f71758ca4ff6f04eb60c67dba11424e98c1a8"
 
   url "https://cli.moonbitlang.com/#{arch}/moon"
   name "MoonBit"
